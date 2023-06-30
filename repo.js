@@ -1,25 +1,81 @@
 // 子应用repo信息
-exports.repoInfos = [
-    {   
-        name: 'ProjectA',
-        repo: 'https://github.com/liangxin199045/project-app1.git',
-        branch: 'main'
+const getrepositoryUrl = (path) => {
+    return `git@gitlab.followme-internal.com:Frontend/dc/${path}.git`
+}
+
+const projects = [
+    {
+        name: 'lib-broker-component'
     },
     {
-        name: 'ProjectB',
-        repo: 'https://github.com/liangxin199045/project-app2.git',
-        branch: 'main'
+        name: 'node-static-email'
     },
     {
-        name: 'ProjectC',
-        repo: 'https://github.com/liangxin199045/project-app3.git',
-        branch: 'main'
+        name: 'lib-broker-crm'
     },
     {
-        name: 'ProjectD',
-        repo: 'https://github.com/liangxin199045/project-app4.git',
-        branch: 'main'
+        name: 'lib-broker-business'
+    },
+    {
+        name: 'ssr-trade'
+    },
+    {
+        name: 'ssr-cms'
+    },
+    {
+        name: 'ssr-broker-main'
+    },
+    {
+        name: 'ssr-broker-hub'
+    },
+    {
+        name: 'ssr-broker-account'
+    },
+    {
+        name: 'ssr-im'
+    },
+    {
+        name: 'ssr-broker-opa'
+    },
+    {
+        name: 'ssr-broker-api'
+    },
+    {
+        name: 'ssr-broker-crm-hub'
+    },
+    {
+        name: 'ssr-broker-crm-content'
+    },
+    {
+        name: 'ssr-broker-crm'
+    },
+    {
+        name: 'ssr-crm-language'
+    },
+    {
+        name: 'ssr-broker-pdf'
+    },
+    {
+        name: 'ssr-broker-content'
+    },
+    {
+        name: 'ssr-oms'
+    },
+    {
+        name: 'ssr-remote'
+    },
+    {
+        name: 'task-sitemap'
     }
-]
+].map((item) => {
+    return {
+        name: item.name,
+        repo: getrepositoryUrl(item.name),
+        branch: 'master'
+    }
+})
+
+exports.repoInfos = projects
+
 // 代码下载目录
 exports.downloadDir = 'codes';                                        
